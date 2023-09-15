@@ -19,3 +19,18 @@ I used feroxbuster, with this tool you can, forced browsing is an attack where t
 I found this:
 
 ![obraz](https://github.com/Anogota/Nibbles/assets/143951834/5d3e718a-289f-498e-9552-6ddeae9c8f2f)
+
+5.What is the 2015 CVE ID for an authenticated code execution by file upload vulnerability in this version of NibbleBlog.
+First our resource to find exploit is exploit-db, there no many exploit for NibbleBlog, but after few secend i found this.
+
+![obraz](https://github.com/Anogota/Nibbles/assets/143951834/b55c098e-3424-40e2-bff5-5b95ff34226b)
+
+But i try also find this exploit on metasploit and here is the results: 0  exploit/multi/http/nibbleblog_file_upload  2015-09-01       excellent  Yes    Nibbleblog File Upload Vulnerability
+Now we need to insert all data to run this exploit.
+
+![obraz](https://github.com/Anogota/Nibbles/assets/143951834/3e5cdd2a-0351-4598-a820-facbf40523cf)
+
+All like RHOST or LHOST i hope you have to know, what kind of value the need, but the TARGETURI is /nibbleblog/content/private/users.xml
+But i have no idea why this exploit don't wanna run, i do some recon and i found how to do RCE by file upload. You need to go plugins/my_image and there you can use your reverse-shell.php, but remember before upload this image, change the ip, on your local. After ur upload go to nibbleblog/content/private/plugins/my_image/ and there you can find your reverse-shell
+
+![obraz](https://github.com/Anogota/Nibbles/assets/143951834/c4a4b6ea-3d75-4294-b844-ad34646fd11d)
